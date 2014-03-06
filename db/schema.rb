@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(version: 20140228050750) do
     t.integer  "person_id"
     t.string   "name"
     t.string   "description"
+    t.string   "shaft_type"
+    t.string   "hand"
     t.string   "woods_make"
     t.string   "irons_make"
     t.string   "putters_make"
+    t.string   "experience_level"
     t.integer  "condition_id"
     t.integer  "daily_rate"
     t.integer  "weekly_rate"
@@ -31,8 +34,11 @@ ActiveRecord::Schema.define(version: 20140228050750) do
     t.string   "zip_code"
     t.integer  "lender_terms_id"
     t.integer  "free_radius"
+    t.integer  "maximum_delivery_radius"
     t.integer  "delivery_fee"
     t.integer  "points_per_day"
+    t.datetime "activates_at"
+    t.datetime "expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,7 +97,7 @@ ActiveRecord::Schema.define(version: 20140228050750) do
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "encrypted_password"
+    t.string   "password_digest"
     t.string   "status"
     t.integer  "person_id"
     t.datetime "created_at"
