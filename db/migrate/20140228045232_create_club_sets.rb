@@ -5,9 +5,12 @@ class CreateClubSets < ActiveRecord::Migration
       
       t.string :name
       t.string :description
+      t.string :shaft_type
+      t.string :hand
       t.string :woods_make
       t.string :irons_make
       t.string :putters_make
+      t.string :experience_level
 
       t.references :condition
 
@@ -24,8 +27,12 @@ class CreateClubSets < ActiveRecord::Migration
       t.references :lender_terms
 
       t.integer :free_radius
+      t.integer :maximum_delivery_radius
       t.integer :delivery_fee
       t.integer :points_per_day
+
+      t.datetime :activates_at
+      t.datetime :expires_at
 
       t.timestamps
     end
